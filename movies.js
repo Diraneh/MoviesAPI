@@ -1,35 +1,24 @@
-function aleatoire(){
-    var UniqueRandom = {
-                NumHistory: new Array(),
-                generate: function (maxNum) {
-                    var current = Math.ceil(Math.random() * (maxNum));
-                    if (maxNum > 1 && this.NumHistory.length > 0) {
-                        if (this.NumHistory.length != maxNum) {
-                            while ($.inArray(current, this.NumHistory) != -1) {
-                                current = Math.ceil(Math.random() * (maxNum));
-                            }
-                            this.NumHistory.push(current);
-                            return current;
-                        } else {
-                          
-                            return current;
-                        }
-                    } else {
-                       
-                        this.NumHistory.push(current);
-                        return current;
-                    }
-                }
-                
-            };
-        }
+var titlesElt = document.getElementById("title");
+ajaxGet("https://api.themoviedb.org/3/movie/popular?api_key=2bb0925fc8fc15c40b13b090730ac54e&language=us&page=1", function (reponse) {
+    // Transforme la réponse en un tableau d'titles
+    var title= JSON.parse(reponse);
+    
+    
+    console.log(title);
+        // Ajout du titre et du contenu de chaque article
+        var contenuElt = document.createElement("div");
+       
+        contenuElt.textContent = title.contenu;
+        var titreElt = document.createElement("h2");
+    
 
-        function aleadiv(){
-            let b = document.body;
-            let newP = document.createElement('div');
-            let newTexte = document.createTextNode('Texte écrit en JavaScript');
-            b.prepend(newP);
-            b.append(newTexte);
+        titreElt.textContent = title.titre;
+       
+        
+        contenuElt.append(titreElt);
+        console.log(contenuElt);
+       
+    });
 
-            
-        }
+
+   

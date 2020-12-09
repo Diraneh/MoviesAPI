@@ -22,14 +22,14 @@ ajaxGet("https://api.themoviedb.org/3/movie/popular?api_key=2bb0925fc8fc15c40b13
             
             titreElt.style="color:white;padding-bottom:20px;margin-top:0;margin-bottom:-1rem"
             
-            
+           
 
             
             var modal = document.getElementById("myModal");
             var boddy = document.getElementById("body");
             var te=document.createElement("p");
             te.textContent =data[i].title;
-            
+           
           
             // When the user clicks on <span> (x), close the modal
 img.onclick = function() {
@@ -47,12 +47,12 @@ img.onclick = function() {
             
             
             
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-              if (event.target == modal) {
-                modal.style.display = "block";
-              }
-            }
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+
         
            titlesElt.append(contenuElt);
            contenuElt.appendChild(img);
@@ -61,9 +61,9 @@ img.onclick = function() {
           modal.appendChild(boddy);
           boddy.appendChild(te);
        
-        }
+       
           
-        
+        }
      
     });
 

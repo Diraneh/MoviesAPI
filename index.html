@@ -2,53 +2,58 @@
 <html lang="fr">
 
 <head>
-    <title>Popular Movies</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-   
+  <title>Popular Movies</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-    
-  
-    
-  
-  
+
+
+
+
+
+
 </head>
-<body>
-    
-  <nav class="navbar navbar-expand-lg navbar-danger bg-danger"> <a class="navbar-brand" href="#" data-abc="true" style="color:rgb(253, 253, 253)"><img class="photo"src="logo-design.JPG"></a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-    <div class="collapse navbar-collapse" id="navbarColor02">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"> <a class="nav-link" href="#" data-abc="true" style="color:white">Home <span class="sr-only">(current)</span></a> </li>
-            <li class="nav-item"> <a class="nav-link" href="#" data-abc="true" style="color:white">contact</a> </li>
-            <li class="nav-item"> <a class="nav-link" href="#" data-abc="true" style="color:white">Pricing</a> </li>
-            <li class="nav-item"> <a class="nav-link" href="#" data-abc="true" style="color:white">Social</a> </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0"> <input class="form-control mr-sm-2" type="text" placeholder="Search"> <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button> </form>
-    </div>
-</nav>
 
-       <div class="container-fluid" style="margin-top:150px">
-        <div class="row" id="film">
-      
-     <!-- The Modal -->
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-danger bg-danger"> <a class="navbar-brand" href="#" data-abc="true"
+      style="color:rgb(253, 253, 253)"><img class="photo" src="logo-design.JPG"></a> <button class="navbar-toggler"
+      type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02"
+      aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"> <a class="nav-link" href="#" data-abc="true" style="color:white">Home <span
+              class="sr-only">(current)</span></a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#" data-abc="true" style="color:white">contact</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#" data-abc="true" style="color:white">Pricing</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#" data-abc="true" style="color:white">Social</a> </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0"> <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button> </form>
+    </div>
+  </nav>
+
+  <div class="container-fluid" style="margin-top:150px">
+    <div class="row" id="film">
+<!-- The Modal -->
 <div id="myModal" class="modal">
 
   <!-- Modal content -->
-  <div class="modal-content">
+  <div class="modal-content" id="body">
     <div class="modal-header">
       <span class="close">&times;</span>
       <h2>Modal Header</h2>
     </div>
-    <div class="modal-body">
-      <p id="detaille"></p>
-     
+    <div class="modal-body" >
+      <p>Some text in the Modal Body</p>
+      <p>Some other text...</p>
     </div>
     <div class="modal-footer">
       <h3>Modal Footer</h3>
@@ -56,22 +61,21 @@
   </div>
 
 </div>
-           
-       </div>    
-      
 
-    
-
-    <script src="ajax.js"></script>
-    <script src="movies.js"></script>
-    
+    </div>
+  </div>
 
 
-  
-   
+
+
+  <script src="ajax.js"></script>
+  <script src="movies.js"></script>
+
+
+
+
+
 
 </body>
+
 </html>
-
-
-

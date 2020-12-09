@@ -17,9 +17,13 @@ ajaxGet("https://api.themoviedb.org/3/movie/upcoming?api_key=2bb0925fc8fc15c40b1
             img.src = "https://image.tmdb.org/t/p/w500"+data[i].poster_path+"";       
             
            
+            var titreElt=document.createElement("p");
+            titreElt.textContent=data[i].title;
             
-         
-           
+            titreElt.style="padding-bottom:20px;margin-top:0;margin-bottom:-1rem"
+          
+          
+              
          
             var modal = document.getElementById("myModal");
 
@@ -46,14 +50,12 @@ ajaxGet("https://api.themoviedb.org/3/movie/upcoming?api_key=2bb0925fc8fc15c40b1
                 modal.style.display = "none";
               }
             }
-            var modalo = document.getElementById("detaille");
-            var titreElt=document.createElement("p");
-            titreElt.textContent=data[i].title;
-            
+         
            titlesElt.appendChild(contenuElt);
            contenuElt.appendChild(img);
+           contenuElt.appendChild(titreElt);
            
-         img.appendChild(modalo);
+       
         
           
         }
@@ -61,6 +63,14 @@ ajaxGet("https://api.themoviedb.org/3/movie/upcoming?api_key=2bb0925fc8fc15c40b1
     });
 
 
+
+    
+
+  
+            
+         
+        
+          
 
     
 

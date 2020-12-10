@@ -10,11 +10,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-  <link rel="stylesheet" href="style.css">
+  
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
- 
-
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script src="AutoRefresh.js"></script>
+  <link rel="stylesheet" href="style.css">
 
 
 
@@ -23,7 +27,7 @@
 
 </head>
 
-<body >
+<body onload="JavaScript:AutoRefresh(3000);">
 
   <nav class="navbar navbar-expand-lg navbar-danger bg-danger"> <a class="navbar-brand" href="#" data-abc="true"
       style="color:rgb(253, 253, 253)"><img class="photo" src="logo-design.JPG"></a> <button class="navbar-toggler"
@@ -52,6 +56,9 @@
     
     <span class="close">&times;</span>
 
+    
+  
+  
 </div>
 
     </div>
@@ -59,12 +66,9 @@
 
   </div>
 
+
   <script src="ajax.js"></script>
   <script src="movies.js"></script>
-
-
-
-
 
 </body>
 

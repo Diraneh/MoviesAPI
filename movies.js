@@ -21,11 +21,11 @@ ajaxGet("https://api.themoviedb.org/3/movie/now_playing?api_key=2bb0925fc8fc15c4
            
         
             img.src = "https://image.tmdb.org/t/p/w500"+data[i].poster_path+"";       
-            
+           img.style="height:80%"; 
             var titreElt=document.createElement("p");
             titreElt.textContent=data[i].title;
-            
-            titreElt.style="color:white;padding-bottom:20px;margin-top:0;margin-bottom:-1rem"
+         
+            titreElt.style="color:white;padding-bottom:20px;margin-top:0;margin-bottom:-1rem";
             var Notation=document.createElement("p");
             Notation.textContent=Note[i].popularity;
            
@@ -103,6 +103,7 @@ img.onclick = function() {
   var teeh=document.createElement("h1");
       teeh.textContent =data[1].title;
       teeh.style="color:red";
+     
    var teep=document.createElement("p");
      teep.textContent =pata[1].overview;
    var tvv=document.createElement("p");
@@ -181,16 +182,30 @@ if(data[i]!==data[1] && data[i]!==data[0] ){
     });
 
 
+   
+  function myfunction(){
 
+    var query=document.getElementById("recherche").value;
     
-  
-
-  
-            
-         
-        
-          
-
+    var titlesearch="Votre recherche : "+query+""
     
+    var lien="https://api.themoviedb.org/3/search/movie?api_key=2bb0925fc8fc15c40b13b090730ac54e&language=en-US&query=recherche"+query+"&page=1&include_adult=false";
+    // Transforme la réponse en un tableau d'titles
+    var title= JSON.parse(reponse);
+    var data=title['results'];
+    var overview= JSON.parse(reponse);
+    var pata=overview['results'];
+    var popularity= JSON.parse(reponse);
+    var Note=popularity['results'];
+    
+    console.log(title);
+    var Trouver=document.createElement("h1");
+   
+    Trouver.textContent=titlesearch;
+    recherche.append(Trouver);
+  
+  }
+
+
 
   

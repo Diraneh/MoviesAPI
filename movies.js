@@ -182,30 +182,67 @@ if(data[i]!==data[1] && data[i]!==data[0] ){
     });
 
 
+       
+function search () {
+  
+    
+    
    
-  function myfunction(){
-
-    var query=document.getElementById("recherche").value;
+  
     
-    var titlesearch="Votre recherche : "+query+""
+   
     
-    var lien="https://api.themoviedb.org/3/search/movie?api_key=2bb0925fc8fc15c40b13b090730ac54e&language=en-US&query=recherche"+query+"&page=1&include_adult=false";
-    // Transforme la réponse en un tableau d'titles
+     
+    ajaxGet("https://api.themoviedb.org/3/movie/now_playing?api_key=2bb0925fc8fc15c40b13b090730ac54e&language=en-US&page=1&region=US", function (reponse) {
+  
     var title= JSON.parse(reponse);
     var data=title['results'];
-    var overview= JSON.parse(reponse);
-    var pata=overview['results'];
-    var popularity= JSON.parse(reponse);
-    var Note=popularity['results'];
-    
-    console.log(title);
-    var Trouver=document.createElement("h1");
+ 
+ 
    
-    Trouver.textContent=titlesearch;
-    recherche.append(Trouver);
+
+ 
+      var quer=document.getElementById("rechercher").value;
+     
+    if (data[0].title==quer) {
+      var Trouver=document.createElement("h1");
+     
+     
+      Trouver.textContent=data[0].title;
+        console.log(quer);
+        console.log(Trouver);
+      var img=document.createElement("img");
+           
+        
+            img.src = "https://image.tmdb.org/t/p/w500"+data[0].poster_path+"";       
+           img.style="height:80%";
+   
+    rechercher.appendChild(img);
+    console.log(img);
+
+    }
+    else if(data[1].title==quer) {
+      var Trouver=document.createElement("h1");
+     
+     
+      Trouver.textContent=data[1].title;
+        console.log(quer);
+        console.log(Trouver);
+      var img=document.createElement("img");
+           
+        
+            img.src = "https://image.tmdb.org/t/p/w500"+data[1].poster_path+"";       
+           img.style="height:80%";
+   
+    rechercher.appendChild(img);
+    console.log(img);
+    }
+ 
   
-  }
-
-
-
   
+});
+
+    }
+
+
+

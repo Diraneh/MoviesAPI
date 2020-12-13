@@ -10,6 +10,32 @@ ajaxGet("https://api.themoviedb.org/3/movie/now_playing?api_key=2bb0925fc8fc15c4
     console.log(title);
          
     var titlesElt = document.getElementById("film");
+
+    
+var UniqueRandom = {
+  NumHistory: new Array(),
+  generate: function (maxNum) {
+      var current = Math.ceil(Math.random() * (maxNum));
+      if (maxNum > 1 && this.NumHistory.length > 0) {
+          if (this.NumHistory.length != maxNum) {
+              while ($.inArray(current, this.NumHistory) != -1) {
+                  current = Math.ceil(Math.random() * (maxNum));
+              }
+              this.NumHistory.push(current);
+              return current;
+          } else {
+            
+              return current;
+          }
+      } else {
+         
+          this.NumHistory.push(current);
+          return current;
+      }
+  }
+  
+};
+
     
         // Ajout du titre et du contenu de chaque article
         for (var i = 0; i <data.length; i++){
@@ -19,21 +45,15 @@ ajaxGet("https://api.themoviedb.org/3/movie/now_playing?api_key=2bb0925fc8fc15c4
            
            var img=document.createElement("img");
            
-        
-            img.src = "https://image.tmdb.org/t/p/w500"+data[i].poster_path+"";       
+           var randomItem = data[UniqueRandom.generate(20)];
+           img.src = "https://image.tmdb.org/t/p/w500"+randomItem.poster_path+"";       
            img.style="height:80%"; 
-            var titreElt=document.createElement("p");
-            titreElt.textContent=data[i].title;
+          
          
-            titreElt.style="color:white;padding-bottom:20px;margin-top:0;margin-bottom:-1rem";
-            var Notation=document.createElement("p");
-            Notation.textContent=Note[i].popularity;
-           
-            Notation.style="color:green";
+       
             titlesElt.append(contenuElt);
             contenuElt.appendChild(img);
-            contenuElt.appendChild(titreElt);
-            
+           
              
          if(data[i]!==data[1]){
 
@@ -199,7 +219,8 @@ function search () {
     var data=title['results'];
  
  
-   
+    var titlesElt = document.getElementById("film");
+
 
  
       var quer=document.getElementById("rechercher").value;
@@ -217,8 +238,9 @@ function search () {
             img.src = "https://image.tmdb.org/t/p/w500"+data[0].poster_path+"";       
            img.style="height:80%";
    
-    rechercher.appendChild(img);
-    console.log(img);
+           titlesElt.append(rechercher);     
+           titlesElt.appendChild(img);
+           console.log(img);
 
     }
     else if(data[1].title==quer) {
@@ -233,8 +255,8 @@ function search () {
         
             img.src = "https://image.tmdb.org/t/p/w500"+data[1].poster_path+"";       
            img.style="height:80%";
-   
-    rechercher.appendChild(img);
+    titlesElt.append(rechercher);     
+    titlesElt.appendChild(img);
     console.log(img);
     }
  

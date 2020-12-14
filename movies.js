@@ -46,7 +46,7 @@ var UniqueRandom = {
            var img=document.createElement("img");
            
            var randomItem = data[UniqueRandom.generate(20)];
-           img.src = "https://image.tmdb.org/t/p/w500"+randomItem.poster_path+"";       
+             img.src = "https://image.tmdb.org/t/p/w500"+data[i].poster_path+"";       
            img.style="height:80%"; 
           
          
@@ -212,59 +212,59 @@ function search () {
     
    
     
-     
-    ajaxGet("https://api.themoviedb.org/3/movie/now_playing?api_key=2bb0925fc8fc15c40b13b090730ac54e&language=en-US&page=1&region=US", function (reponse) {
+  var quer=document.getElementById("rechercher").value;
+    ajaxGet("https://api.themoviedb.org/3/search/movie?api_key=2bb0925fc8fc15c40b13b090730ac54e&language=en-US&query="+quer+"&page=1&include_adult=false", function (reponse) {
   
-    var title= JSON.parse(reponse);
-    var data=title['results'];
+      var title= JSON.parse(reponse);
+      var data=title['results'];
+      var overview= JSON.parse(reponse);
+      var pata=overview['results'];
+      var popularity= JSON.parse(reponse);
+      var Note=popularity['results'];
  
- 
-    var titlesElt = document.getElementById("film");
+    var titlesElt = document.getElementById("films");
 
 
  
       var quer=document.getElementById("rechercher").value;
      
-    if (data[0].title==quer) {
-      var Trouver=document.createElement("h1");
+  
      
-     
+    
+        var contenuElt = document.createElement("div");
+        contenuElt.classList="col-12 col-md-12 col-lg-12";
+        var tesp=document.createElement("p");
+        tesp.textContent =pata[2].overview;
+        tesp.style="color:white";
+        var Trouver=document.createElement("h1");
       Trouver.textContent=data[0].title;
-        console.log(quer);
-        console.log(Trouver);
+     
+  
+      
       var img=document.createElement("img");
            
         
             img.src = "https://image.tmdb.org/t/p/w500"+data[0].poster_path+"";       
-           img.style="height:80%";
+           img.style="margin-left:40%";
    
-           titlesElt.append(rechercher);     
-           titlesElt.appendChild(img);
-           console.log(img);
-
-    }
-    else if(data[1].title==quer) {
-      var Trouver=document.createElement("h1");
-     
-     
-      Trouver.textContent=data[1].title;
-        console.log(quer);
-        console.log(Trouver);
-      var img=document.createElement("img");
-           
-        
-            img.src = "https://image.tmdb.org/t/p/w500"+data[1].poster_path+"";       
-           img.style="height:80%";
-    titlesElt.append(rechercher);     
-    titlesElt.appendChild(img);
+    titlesElt.append(quer);
+    titlesElt.appendChild(contenuElt);
+     contenuElt.appendChild(tesp); 
+          
+    contenuElt.appendChild(img);
+   
     console.log(img);
-    }
- 
+
+
+    
+    
+     
   
   
 });
 
-    }
+}   
+
 
 
 

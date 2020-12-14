@@ -27,7 +27,7 @@
 
 </head>
 
-<body >
+<body onload="JavaScript:AutoRefresh(90000);">
 
   <nav class="navbar navbar-expand-lg navbar-danger bg-danger"> <a class="navbar-brand" href="#" data-abc="true"
       style="color:rgb(253, 253, 253)"><img class="photo" src="logo-design.JPG"></a> <button class="navbar-toggler"
@@ -37,23 +37,37 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active"> <a class="nav-link" href="#" data-abc="true" style="color:white">Home <span
               class="sr-only">(current)</span></a> </li>
-        <li class="nav-item"> <a class="nav-link" href="#" data-abc="true" style="color:white">contact</a> </li>
-        <li class="nav-item"> <a class="nav-link" href="rechercher.html" data-abc="true" style="color:white">Catalogue de film</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="contact.html" data-abc="true" style="color:white">contact</a> </li>
+        <h1 style="margin-left:250px">Most Popular Movies</h1>
        
       </ul>
       
-      <div class="input-group w-25 mb-3">
+      <div class="input-group w-25 mb-3" >
         <input type="text" id="rechercher" class="form-control" placeholder="Rechercher un film" size="20">
         
           <button class="btn btn-secondary my-2 my-sm-0" type="submit" 
-         onclick="search()" >valider</a></button>
+         onclick="search()" >valider</button>
          
         </div>
     </div>
   </nav>
+ <div class="container" style="padding-top:-50%">
+   <div class="row">
+    <h1 align="center"
+    style="position: relative; animation: mysecond 2s linear 3s infinite ;color: rgb(247, 243, 243);">
+   Enjoy It !
+  </h1>
 
-  <div class="container-fluid" style="margin-top:150px">
+
+   </div>
+ </div>
+  <div class="container-fluid" style="margin-top:10px">
+    <div  class="row" id="films"></div>
+  </div>
+
+  <div class="container-fluid" style="margin-top:80px">
     <div class="row" id="film">
+      <div  id="films"></div>
 <!-- The Modal -->
 <div id="myModal" class="modal">
 
@@ -61,8 +75,8 @@
   <div class="modal-content" id="body">
     
     <span class="close">&times;</span>
-
-    
+  </div>
+  </div> 
   
   
 </div>
@@ -75,6 +89,7 @@
 
   <script src="ajax.js"></script>
   <script src="movies.js"></script>
+
 
 </body>
 

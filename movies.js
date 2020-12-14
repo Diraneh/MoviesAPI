@@ -41,7 +41,7 @@ var UniqueRandom = {
         for (var i = 0; i <data.length; i++){
           
            var contenuElt = document.createElement("div");
-           contenuElt.classList="col-3 col-md-3 col-lg-3";
+           contenuElt.classList="col-4 col-md-4 col-lg-4";
            
            var img=document.createElement("img");
            
@@ -238,6 +238,8 @@ function search () {
         tesp.style="color:white";
         var Trouver=document.createElement("h1");
       Trouver.textContent=data[0].title;
+      Trouver.style="color:white";
+      
      
   
       
@@ -251,7 +253,7 @@ function search () {
     titlesElt.appendChild(contenuElt);
      contenuElt.appendChild(tesp); 
           
-    contenuElt.appendChild(img);
+    tesp.appendChild(img);
    
     console.log(img);
 

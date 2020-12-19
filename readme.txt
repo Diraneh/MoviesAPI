@@ -19,4 +19,4 @@ Ce travail se fera individuellement
 Du 07/12/2020 au 11/12/2020
 
 
-![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=Diraneh&repo=MoviesAPI)
+

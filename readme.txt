@@ -1,4 +1,8 @@
 Création d'une interface Javascript alimenté par une API
+ | Version | Supported          |
+| ------- | ------------------ |
+| 1.0.x   | :All navigation    |
+| 1.1.x   | : curenty develop  | 
 
 Dans ce projet il vous est demandé de générer une interface graphique en Javascript.
 Réalisez une interface de type allociné, themoviedb.
